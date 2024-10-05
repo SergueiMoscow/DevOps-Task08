@@ -8,6 +8,7 @@ resource "yandex_compute_disk" "extra_disk" {
 
 resource "yandex_compute_instance" "storage" {
   name = "storage"
+  hostname = "storage"
 
   resources {
     cores  = var.vm_web_resources.cores
@@ -23,11 +24,11 @@ resource "yandex_compute_instance" "storage" {
 
   network_interface {
     subnet_id = yandex_vpc_subnet.develop.id
-    nat       = var.vm_web_params.nat
+    nat       = var.vm_storage_params.nat
   }
 
   scheduling_policy {
-    preemptible = var.vm_web_params.preemptible
+    preemptible = var.vm_storage_params.preemptible
   }
 
   dynamic "secondary_disk" {
@@ -48,5 +49,17 @@ variable "disk_properties" {
   default = {
     type ="network-hdd"
     size = 1
+  }
+}
+
+variable "vm_storage_params" {
+  type = object({
+    preemptible = bool
+    nat         = bool
+  })
+
+  default = {
+    preemptible = true
+    nat         = true
   }
 }

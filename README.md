@@ -46,3 +46,13 @@
 
 ## [Задание 4](tasks/task4.md)
 
+Примеры берём из кода урока
+
+Создаём [ansible.tf](src/ansible.tf)  
+Не стал удалять примеры создания for.ini и hosts.yaml, их тоже адаптировал под проект.
+
+Создаём [hosts.tftpl](src/hosts.tftpl), модифицируем, добавляя fqdn
+
+Получившийся [hosts.ini](src/hosts.ini)
+![hosts.ini](images/image08.png)
+

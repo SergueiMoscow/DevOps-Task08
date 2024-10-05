@@ -3,6 +3,7 @@ resource "yandex_compute_instance" "web" {
   depends_on = [yandex_compute_instance.db]
 
   name = "web-${count.index + 1}"
+  hostname = "web-${count.index + 1}"
 
   resources {
     cores  = var.vm_web_resources.cores
@@ -27,4 +28,41 @@ resource "yandex_compute_instance" "web" {
   }
 
   metadata = local.vm_metadata
+}
+
+
+variable "count_web_vm" {
+  type        = number
+  default     = 2
+  description = "Count vm instances for web"
+}
+
+variable "vm_web_resources" {
+  type = object({
+    cores         = number
+    memory        = number
+    core_fraction = number
+    hdd_size      = number
+    hdd_type      = string
+  })
+
+  default = {
+      cores         = 2
+      memory        = 1
+      core_fraction = 5
+      hdd_size      = 5
+      hdd_type      = "network-hdd"
+  }
+}
+
+variable "vm_web_params" {
+  type = object({
+    preemptible = bool
+    nat         = bool
+  })
+
+  default = {
+    preemptible = true
+    nat         = true
+  }
 }
