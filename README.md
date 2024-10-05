@@ -27,3 +27,6 @@
 Добавляем группы безопасности  
 ![add security groups](images/image04.png)
 
+[Commit задач 1 и 2](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/d7fbfef9c8dc22448b11164cabbf74141103cc20)
+
+## [Задание 3]()
