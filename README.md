@@ -27,14 +27,18 @@
 Добавляем группы безопасности  
 ![add security groups](images/image04.png)
 
-Виртуальные машины создались:  
-![vms created](images/image05.png)
-
 Создаём файл [for_each-vm.tf](src/for_each-vm.tf)
 
 Добавляем локальную переменную для for_each файла:  
 ![local variable](images/image06.png)
 
-[Commit задач 1 и 2](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/d7fbfef9c8dc22448b11164cabbf74141103cc20)
+Виртуальные машины создались:  
+![vms created](images/image05.png)
 
 ## [Задание 3]()
+
+Создаём файл [disk_vm.tf](src/disk_vm.tf)
+
+Запускаем, проверяем:  
+![vms created](images/image07.png)
+
