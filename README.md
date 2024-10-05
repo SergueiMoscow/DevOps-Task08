@@ -56,3 +56,13 @@
 Получившийся [hosts.ini](src/hosts.ini)
 ![hosts.ini](images/image08.png)
 
+[Commit](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/1dc9fa826e313f4d77cd6612248aaf760a543c0c)
+
+## [Задание 5](tasks/task5.md)
+
+Пишем [output.tf](src/output.tf)
+
+Запускаем `terraform apply`.
+
+Output:  
+![output](images/image09.png)
