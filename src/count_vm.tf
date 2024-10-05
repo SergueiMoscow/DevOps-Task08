@@ -1,5 +1,6 @@
 resource "yandex_compute_instance" "web" {
   count = var.count_web_vm
+  depends_on = [yandex_compute_instance.db]
 
   name = "web-${count.index + 1}"
 
