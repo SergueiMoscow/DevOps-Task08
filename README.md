@@ -95,3 +95,26 @@ Output:
 
 Результат:  
 ![console](images/image13.png)
+
+[Commit](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/7a27edfa67d9cff955305a2c19cd9fddf3365c09)
+
+## [Задание 8](tasks/task8.md)
+
+В данном коде:  
+```
+[webservers]
+%{~ for i in webservers ~}
+${i["name"]} ansible_host=${i["network_interface"][0]["nat_ip_address"] platform_id=${i["platform_id "]}}
+%{~ endfor ~}
+```
+лишний не там стои закрывающая фигурная скобка. Вот ошибка `terraform validate`  
+![error](images/image14.png)
+
+Исправляем, также убираем лишний пробел в строке `"platform_id "`:  
+`${i["name"]} ansible_host=${i["network_interface"][0]["nat_ip_address"]} platform_id=${i["platform_id"]}`
+
+Выполняем:
+Результат (hosts.ini):  
+![hosts.ini](images/image15.png)
+
+[Commit](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/3c9a15d89220d8eb408f57253e7722d839414cd9)
