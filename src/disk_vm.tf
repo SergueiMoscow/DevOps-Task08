@@ -1,18 +1,18 @@
 resource "yandex_compute_disk" "extra_disk" {
   count = 3
 
-  name  = "extra-disk-${count.index + 1}"
-  size  = var.disk_properties.size
-  type  = var.disk_properties.type
+  name = "extra-disk-${count.index + 1}"
+  size = var.disk_properties.size
+  type = var.disk_properties.type
 }
 
 resource "yandex_compute_instance" "storage" {
-  name = "storage"
+  name     = "storage"
   hostname = "storage"
 
   resources {
-    cores  = var.vm_web_resources.cores
-    memory = var.vm_web_resources.memory
+    cores         = var.vm_web_resources.cores
+    memory        = var.vm_web_resources.memory
     core_fraction = var.vm_web_resources.core_fraction
   }
 
@@ -47,7 +47,7 @@ variable "disk_properties" {
     size = number
   })
   default = {
-    type ="network-hdd"
+    type = "network-hdd"
     size = 1
   }
 }

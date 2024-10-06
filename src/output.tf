@@ -1,15 +1,15 @@
 output "vm_list" {
   value = flatten([
     [for instance in yandex_compute_instance.web : {
-      name  = instance.name
-      id    = instance.id
-      fqdn  = instance.fqdn
+      name = instance.name
+      id   = instance.id
+      fqdn = instance.fqdn
     }],
 
     [for instance in yandex_compute_instance.db : {
-      name  = instance.name
-      id    = instance.id
-      fqdn  = instance.fqdn
+      name = instance.name
+      id   = instance.id
+      fqdn = instance.fqdn
     }],
 
     [{

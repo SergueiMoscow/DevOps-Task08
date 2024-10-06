@@ -1,13 +1,13 @@
 resource "yandex_compute_instance" "web" {
-  count = var.count_web_vm
+  count      = var.count_web_vm
   depends_on = [yandex_compute_instance.db]
 
-  name = "web-${count.index + 1}"
+  name     = "web-${count.index + 1}"
   hostname = "web-${count.index + 1}"
 
   resources {
-    cores  = var.vm_web_resources.cores
-    memory = var.vm_web_resources.memory
+    cores         = var.vm_web_resources.cores
+    memory        = var.vm_web_resources.memory
     core_fraction = var.vm_web_resources.core_fraction
   }
 
@@ -18,8 +18,8 @@ resource "yandex_compute_instance" "web" {
   }
 
   network_interface {
-    subnet_id = yandex_vpc_subnet.develop.id
-    nat       = var.vm_web_params.nat
+    subnet_id          = yandex_vpc_subnet.develop.id
+    nat                = var.vm_web_params.nat
     security_group_ids = [yandex_vpc_security_group.example.id]
   }
 
@@ -47,11 +47,11 @@ variable "vm_web_resources" {
   })
 
   default = {
-      cores         = 2
-      memory        = 1
-      core_fraction = 5
-      hdd_size      = 5
-      hdd_type      = "network-hdd"
+    cores         = 2
+    memory        = 1
+    core_fraction = 5
+    hdd_size      = 5
+    hdd_type      = "network-hdd"
   }
 }
 

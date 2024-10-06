@@ -117,4 +117,5 @@ ${i["name"]} ansible_host=${i["network_interface"][0]["nat_ip_address"] platform
 Результат (hosts.ini):  
 ![hosts.ini](images/image15.png)
 
-[Commit](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/3c9a15d89220d8eb408f57253e7722d839414cd9)
+[Commit](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/182d2aec89d38426f022d4a27d10a75f32afb764)
+

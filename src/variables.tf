@@ -38,6 +38,6 @@ variable "vms_ssh_user" {
 }
 
 variable "image_ubuntu" {
-  type        = string
-  default     = "ubuntu-2004-lts"
+  type    = string
+  default = "ubuntu-2004-lts"
 }
