@@ -8,7 +8,7 @@ ${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"]} fqdn=
 [databases]
 %{~ for i in dbservers ~}
 
-${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"]} fqdn=${i["fqdn"]}
+${i["name"]}   ansible_host=${coalesce(i["network_interface"][0]["nat_ip_address"], i["network_interface"][0]["ip_address"])} fqdn=${i["fqdn"]}
 %{~ endfor ~}
 
 

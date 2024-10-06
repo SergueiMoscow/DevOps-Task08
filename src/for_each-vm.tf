@@ -18,11 +18,11 @@ resource "yandex_compute_instance" "db" {
 
   network_interface {
     subnet_id = yandex_vpc_subnet.develop.id
-    nat       = true
+    nat       = var.vm_db_params.nat
   }
 
   scheduling_policy {
-    preemptible = false
+    preemptible = var.vm_db_params.preemptible
   }
 
   metadata = local.vm_metadata
@@ -61,4 +61,16 @@ variable "each_vm" {
       disk_volume = 1
     }
   ]
+}
+
+variable "vm_db_params" {
+  type = object({
+    preemptible = bool
+    nat         = bool
+  })
+
+  default = {
+    preemptible = true
+    nat         = false
+  }
 }

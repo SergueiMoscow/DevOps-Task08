@@ -66,3 +66,18 @@
 
 Output:  
 ![output](images/image09.png)
+
+[Commit](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/049f63b60263a5578777cde5e344aa105fae58b0)
+
+## [Задание 6](tasks/task6.md)
+
+Копируем `ansible.tf` из урока в [`ansible_exec`](src/ansible_exec.tf)
+
+Определяем параметры nat и preemptible для БД, nat ставим false  
+![nat false for db](images/image10.png)
+
+Модифицируем `hosts.tftpl`  
+![hosts.tftpl](images/image11.png)
+
+Запускаем, результат:
+![result hosts.ini](images/image12.png)
