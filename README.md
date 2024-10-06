@@ -81,3 +81,7 @@ Output:
 
 Запускаем, результат:
 ![result hosts.ini](images/image12.png)
+
+[Commit](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/88b05f9b4e5fa21dac6bd935dcc7b69aa04009b2)
+
+## [Задание 7](tasks/task7.md)
