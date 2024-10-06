@@ -84,4 +84,14 @@ Output:
 
 [Commit](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/88b05f9b4e5fa21dac6bd935dcc7b69aa04009b2)
 
+[Commit со сгенерированными by ansible.tf файлами](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/847be9e624996bd9b746ffbd2ae56edc546467a7)
+
 ## [Задание 7](tasks/task7.md)
+
+Создаём [vpc.tf](src/vpc.tf) с объявлением необходимых данных.
+
+Конструкция для удаления элемента из переменной:  
+`[for idx, id in tolist(local.subnet_ids) : id if idx != 2]`
+
+Результат:  
+![console](images/image13.png)
