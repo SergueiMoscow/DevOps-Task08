@@ -112,6 +112,8 @@ Output:
 
 ![console](images/image16.png)
 
+[Commit](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/2d635eda9442077a298814251b012790ffe6efb3)
+
 ## [Задание 8](tasks/task8.md)
 
 В данном коде:  
