@@ -98,6 +98,20 @@ Output:
 
 [Commit](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/7a27edfa67d9cff955305a2c19cd9fddf3365c09)
 
+Конструкция, из которой получаем всю структуру без третьих элементов:
+```
+{
+  network_id = local.vpc.network_id
+  subnet_ids = [for idx, id in tolist(local.subnet_ids) : id if idx != 2]
+  subnet_zones = [for idx, id in tolist(local.vpc.subnet_zones) : id if idx != 2]
+}
+```
+
+Она же в одну строку (для copy-paste непостердсвенно в консоль terraform):
+`{network_id = local.vpc.network_id,subnet_ids = [for idx, id in tolist(local.subnet_ids) : id if idx != 2],subnet_zones = [for idx, id in tolist(local.vpc.subnet_zones) : id if idx != 2]}`
+
+![console](images/image16.png)
+
 ## [Задание 8](tasks/task8.md)
 
 В данном коде:  
