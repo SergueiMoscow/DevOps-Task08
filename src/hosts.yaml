@@ -1,10 +1,10 @@
 all:
   hosts:
     web-1:
-        ansible_host: 89.169.137.1
+        ansible_host: 89.169.136.216
         ansible_user: ubuntu
     web-2:
-        ansible_host: 89.169.134.97
+        ansible_host: 51.250.8.12
         ansible_user: ubuntu
     main:
         ansible_host: 
@@ -13,6 +13,6 @@ all:
         ansible_host: 
         ansible_user: ubuntu
     storage:
-        ansible_host: 89.169.138.56
+        ansible_host: 89.169.157.151
         ansible_user: ubuntu
   

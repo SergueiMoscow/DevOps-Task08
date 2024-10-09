@@ -135,3 +135,13 @@ ${i["name"]} ansible_host=${i["network_interface"][0]["nat_ip_address"] platform
 
 [Commit](https://github.com/SergueiMoscow/DevOps-Terraform-03/commit/182d2aec89d38426f022d4a27d10a75f32afb764)
 
+## Обработка массива storages для ansible
+
+Передаём в шаблон `list` с элементом `storage`  
+![list](images/image17.png)
+
+Добавляем цикл в шаблоне   
+![cycle](images/image18.png)
+
+Проверяем `hosts.ini`  
+![cycle](images/image19.png)

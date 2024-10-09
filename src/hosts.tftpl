@@ -1,15 +1,19 @@
 [webservers]
+
 %{~ for i in webservers ~}
 ${i["name"]} ansible_host=${i["network_interface"][0]["nat_ip_address"]} platform_id=${i["platform_id"]}
 %{~ endfor ~}
 
 
 [databases]
-%{~ for i in dbservers ~}
 
+%{~ for i in dbservers ~}
 ${i["name"]}   ansible_host=${coalesce(i["network_interface"][0]["nat_ip_address"], i["network_interface"][0]["ip_address"])} fqdn=${i["fqdn"]}
 %{~ endfor ~}
 
 
-[storage]
-${storage["name"]} ansible_host=${storage["network_interface"][0]["nat_ip_address"]} fqdn=${storage["fqdn"]}
+[storages]
+
+%{~ for i in storages ~}
+${i["name"]} ansible_host=${i["network_interface"][0]["nat_ip_address"]} fqdn=${i["fqdn"]}
+%{~ endfor ~}
